@@ -9257,7 +9257,11 @@ function openCloudSync(){
         '<label class="fld full"><span>或：粘贴另一台设备的配置码（免手工填三项）</span><input type="text" id="csCode" placeholder="HMC1.…"></label>' +
       '</div>' +
       '<div id="csPubBox2"' + (pick === 'public' ? '' : ' style="display:none"') + '>' +
-        '<p class="cloud-tip">点「🎲 生成新密钥」→「保存并启用」就完成了。换设备时把同一串密钥粘进来，数据会自动拉下来；一串密钥一份存档，别人拿到也解不开。</p>' +
+        '<p class="cloud-tip">' +
+          (cloudCfgValid()
+            ? '<b>已开启</b>。换设备时把上面这串密钥粘进去 →「保存并启用」，数据会自动拉下来；一串密钥一份存档，别人拿到也解不开。'
+            : '点「🎲 生成新密钥」→「保存并启用」就完成了。换设备时把同一串密钥粘进来，数据会自动拉下来；一串密钥一份存档，别人拿到也解不开。') +
+        '</p>' +
       '</div>' +
       '<div id="csOwnBox2"' + (pick === 'own' ? '' : ' style="display:none"') + '>' +
         '<p class="cloud-tip">① 在 Supabase 建免费项目，SQL Editor 里跑下面的 SQL（<b>跑一次就够</b>）；② 项目设置 → API，复制 <b>Project URL</b> 和 <b>anon public</b> 填到上面；③ 先在「刀帐最全」的那台设备生成密钥并保存，再复制配置码到其它设备。</p>' +
